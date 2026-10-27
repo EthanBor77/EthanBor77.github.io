@@ -1,6 +1,6 @@
 :root {
   --text: #161a14;
-  --muted-text: #556155;
+  --text-muted: #556155;
   --bg: #e8ede8;
   --cards: #dde4dd;
   --primary: #486148;
@@ -14,7 +14,7 @@
 
 [data-theme="dark"] {
   --text: #e7ebe5;
-  --muted-text: #a0ab9f;
+  --text-muted: #a0ab9f;
   --bg: #121712;
   --cards: #1b221b;
   --primary: #9eb79e;
@@ -61,12 +61,12 @@ body {
   align-items: center;
 }
 
-a {
+/* a {
   color: var(--accent);
-}
+} */
 
 .muted {
-  color: var(--muted-text);
+  color: var(--text-muted);
 }
 
 .grid {
