@@ -26,7 +26,12 @@ function Logo({ size = 80 }) {
             strokeWidth: 6,
           }}
         />
-        <circle cx="55" cy="47" r="3.5" style={{ fill: "var(--accent)" }} />
+        <circle
+          cx="55"
+          cy="47"
+          r="3.5"
+          style={{ fill: "var(--accent-reverse)" }}
+        />
       </svg>
       <span className="brand-name">{"{ Ethan Borror }"}</span>
     </div>
