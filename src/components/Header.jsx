@@ -3,7 +3,7 @@ import Logo from "./Logo";
 
 function Header() {
   return (
-    <header className="header">
+    <header class="site-header">
       <a href="https://ethanbor77.github.io/" className="brand-link">
         <Logo />
       </a>
