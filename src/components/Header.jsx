@@ -1,7 +1,17 @@
 import Logo from "./Logo";
+import { useState, useEffect } from "react";
 // import ThemeToggle from "./ThemeToggle";
 
 function Header() {
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem("theme") ?? "light",
+  );
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
   return (
     <header class="site-header">
       <a href="https://ethanbor77.github.io/" className="brand-link">
@@ -26,6 +36,12 @@ function Header() {
         <a href="#Contact" class="nav-link">
           &#9667; Contact &#9657;
         </a>
+        <button
+          className="btn btn-outline"
+          onClick={() => setTheme((t) => (t === "light" ? "dark" : "light"))}
+        >
+          {theme === "light" ? "Dark mode" : "Light mode"}
+        </button>
       </nav>
     </header>
   );
