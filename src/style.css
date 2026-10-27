@@ -6,6 +6,7 @@
   --primary: #486148;
   --primary-hover: #3b4f3b;
   --accent: #335270;
+  --accent-reverse: #8fadcc;
   --on-color: #e8ece6;
   --border: #c2cbc2;
   --logo-shadow: rgba(186, 186, 186, 0.8);
@@ -20,6 +21,7 @@
   --primary: #9eb79e;
   --primary-hover: #b6cdb6;
   --accent: #8fadcc;
+  --accent-reverse: #335270;
   --on-color: #161a14;
   --border: #2d372d;
   --logo-shadow: rgba(0, 0, 0, 0.6);
