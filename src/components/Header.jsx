@@ -1,5 +1,5 @@
 import Logo from "./Logo";
-import ThemeToggle from "./ThemeToggle";
+// import ThemeToggle from "./ThemeToggle";
 
 function Header() {
   return (
@@ -7,7 +7,7 @@ function Header() {
       <a href="#" className="brand-link">
         <Logo />
       </a>
-      <ThemeToggle />
+      {/* <ThemeToggle /> */}
     </header>
   );
 }
