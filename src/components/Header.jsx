@@ -1,9 +1,14 @@
+import Logo from "./Logo";
+import ThemeToggle from "./ThemeToggle";
+
 function Header() {
   return (
-    <section id="about">
-      <h1>Ethan</h1>
-      <p>Test Text</p>
-    </section>
+    <header className="header">
+      <a href="#" className="brand-link">
+        <Logo />
+      </a>
+      <ThemeToggle />
+    </header>
   );
 }
 
