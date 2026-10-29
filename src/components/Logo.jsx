@@ -1,5 +1,5 @@
 import React from "react";
-import logoImage from "./assets/Logo.png";
+import logoImage from "../assets/Logo.png";
 
 function Logo({ size = 80 }) {
   return (
