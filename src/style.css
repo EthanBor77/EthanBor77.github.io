@@ -206,6 +206,11 @@ body {
   display: none;
 }
 
+/* This applies when in mobile mode */
+.nav-links.active {
+  display: flex;
+}
+
 @media (max-width: 768px) {
   .nav-toggle {
     display: flex;
