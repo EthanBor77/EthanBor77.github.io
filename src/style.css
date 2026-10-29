@@ -157,9 +157,9 @@ body {
   color: var(--primary);
 }
 
-.brand svg {
+/* .brand img {
   filter: drop-shadow(1.95px 1.95px 2.6px var(--logo-shadow));
-}
+} */
 
 .brand-name {
   text-shadow: 1.95px 1.95px 2.6px var(--logo-shadow);
@@ -167,6 +167,12 @@ body {
 
 .brand-link {
   text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logoImage {
+  filter: drop-shadow(1.95px 1.95px 2.6px var(--logo-shadow));
 }
 
 /* Header Styling */
