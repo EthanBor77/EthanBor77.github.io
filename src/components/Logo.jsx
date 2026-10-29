@@ -1,3 +1,6 @@
+import React from "react";
+import logoImage from "./assets/Logo.png";
+
 function Logo({ size = 80 }) {
   return (
     <div className="brand">
@@ -33,7 +36,7 @@ function Logo({ size = 80 }) {
           style={{ fill: "var(--accent-reverse)" }}
         />
       </svg> */}
-      <img src="assets/Logo.png" alt="Ethan Borror Logo"></img>
+      <img src={logoImage} alt="Ethan Borror Logo"></img>
       <span className="brand-name">{"{ Ethan Borror }"}</span>
     </div>
   );
