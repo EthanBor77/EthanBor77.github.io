@@ -7,12 +7,18 @@ function Header() {
     () => localStorage.getItem("theme") ?? "light",
   );
 
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navLinks = document.querySelector(".nav-links");
+  const [isActive, setIsActive] = useState(false);
 
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
+  const toggleMenu = () => {
+    setIsActive(!isActive);
+  };
+
+  // const menuToggle = document.querySelector(".menu-toggle");
+  // const navLinks = document.querySelector(".nav-links");
+
+  // menuToggle.addEventListener("click", () => {
+  //   navLinks.classList.toggle("active");
+  // });
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -27,12 +33,21 @@ function Header() {
       </a>
 
       {/* Nav dropdown for mobile screens only */}
-      <button class="menu-toggle" aria-label="Toggle navigation">
+      <button
+        class="menu-toggle"
+        aria-label="Toggle navigation"
+        className="menu-toggle"
+        onClick={toggleMenu}
+      >
         ☰
       </button>
 
       {/* Nav bar links */}
-      <nav class="nav-menu" aria-label="Primary Navigation">
+      <nav
+        class="nav-menu"
+        aria-label="Primary Navigation"
+        className={`nav-links ${isActive ? "active" : ""}`}
+      >
         <a href="#about" class="nav-link">
           &#9667; About &#9657;
         </a>
