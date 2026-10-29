@@ -33,7 +33,7 @@ function Logo({ size = 80 }) {
           style={{ fill: "var(--accent-reverse)" }}
         />
       </svg> */}
-      <img src="../assets/Logo.png" alt="Ethan Borror Logo"></img>
+      <img src="assets/Logo.png" alt="Ethan Borror Logo"></img>
       <span className="brand-name">{"{ Ethan Borror }"}</span>
     </div>
   );
