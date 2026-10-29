@@ -183,16 +183,6 @@ body {
   width: 100%;
 }
 
-/* Hide dropdown on Desktop */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-}
-
 .nav-menu {
   display: flex;
   align-items: center;
@@ -212,17 +202,27 @@ body {
   color: var(--text);
 }
 
-/* Mobile Responsive Styles (Screens smaller than 768px) */
+/* Hide dropdown on Desktop
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Mobile Responsive Styles (Screens smaller than 768px) 
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block; /* Show dropdown button */
+    display: block; /* Show dropdown button 
   }
 
   .nav-menu {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px; /* Adjust based on navbar height */
+    top: 60px; /* Adjust based on navbar height 
     left: 0;
     width: 100%;
     background-color: #333;
@@ -232,7 +232,7 @@ body {
   }
 }
 
-/* When JS toggles this class, the dropdown appears */
+/* When JS toggles this class, the dropdown appears
 .nav-links.active {
   display: flex;
-}
+} */
