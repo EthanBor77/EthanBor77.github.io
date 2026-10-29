@@ -1,7 +1,7 @@
 function Logo({ size = 80 }) {
   return (
     <div className="brand">
-      <svg
+      {/* <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 64 64"
         width={size}
@@ -32,7 +32,8 @@ function Logo({ size = 80 }) {
           r="3.5"
           style={{ fill: "var(--accent-reverse)" }}
         />
-      </svg>
+      </svg> */}
+      <img src="../assets/Logo.png" alt="Ethan Borror Logo"></img>
       <span className="brand-name">{"{ Ethan Borror }"}</span>
     </div>
   );
