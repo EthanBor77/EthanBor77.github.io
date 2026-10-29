@@ -211,8 +211,18 @@ body {
     display: flex;
   }
 
+  /* Format nav bar into dropdown menu when screen is small */
   .nav-menu {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 15px;
   }
 }
 
