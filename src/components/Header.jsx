@@ -7,11 +7,11 @@ function Header() {
     () => localStorage.getItem("theme") ?? "light",
   );
 
-  // const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
-  // const toggleMenu = () => {
-  //   setIsActive(!isActive);
-  // };
+  const toggleMenu = () => {
+    setIsActive(!isActive);
+  };
 
   // const menuToggle = document.querySelector(".menu-toggle");
   // const navLinks = document.querySelector(".nav-links");
@@ -33,14 +33,14 @@ function Header() {
       </a>
 
       {/* Nav dropdown for mobile screens only */}
-      {/* <button
-        class="menu-toggle"
+      <button
+        class="nav-toggle"
         aria-label="Toggle navigation"
-        className="menu-toggle"
+        // className="menu-toggle"
         onClick={toggleMenu}
       >
         ☰
-      </button> */}
+      </button>
 
       {/* Nav bar links */}
       <nav
