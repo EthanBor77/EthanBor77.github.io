@@ -183,6 +183,16 @@ body {
   width: 100%;
 }
 
+/* Hide dropdown on Desktop */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
@@ -193,11 +203,36 @@ body {
 .nav-link {
   color: var(--text-muted);
   text-decoration: none;
-  font-size: clamp(0.75rem, 1rem, 1rem);
+  font-size: clamp(0.5rem, 1.5rem, 1.5rem);
   font-weight: 600;
   transition: color var(--transition-speed);
 }
 
 .nav-link:hover {
   color: var(--text);
+}
+
+/* Mobile Responsive Styles (Screens smaller than 768px) */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Show dropdown button */
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust based on navbar height */
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 15px;
+  }
+}
+
+/* When JS toggles this class, the dropdown appears */
+.nav-links.active {
+  display: flex;
 }

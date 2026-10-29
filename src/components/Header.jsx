@@ -7,6 +7,13 @@ function Header() {
     () => localStorage.getItem("theme") ?? "light",
   );
 
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
     localStorage.setItem("theme", theme);
@@ -14,9 +21,17 @@ function Header() {
 
   return (
     <header class="site-header">
+      {/* Website Logo */}
       <a href="https://ethanbor77.github.io/" className="brand-link">
         <Logo />
       </a>
+
+      {/* Nav dropdown for mobile screens only */}
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      {/* Nav bar links */}
       <nav class="nav-menu" aria-label="Primary Navigation">
         <a href="#about" class="nav-link">
           &#9667; About &#9657;
