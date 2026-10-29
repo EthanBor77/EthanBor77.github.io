@@ -44,7 +44,7 @@ function Header() {
 
       {/* Nav bar links */}
       <nav
-        className={`nav-menu nav-links ${isActive ? "active" : ""}`}
+        className={`nav-menu ${isActive ? "active" : ""}`}
         aria-label="Primary Navigation"
       >
         <a href="#about" class="nav-link">

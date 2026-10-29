@@ -206,8 +206,9 @@ body {
   display: none;
 }
 
-/* This applies when in mobile mode */
-.nav-links.active {
+/* This only matters when in mobile mode */
+/* When nav button is pushed set nav-links to display */
+.nav-menu.active {
   display: flex;
 }
 
