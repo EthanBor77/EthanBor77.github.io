@@ -221,6 +221,8 @@ body {
 @media (max-width: 768px) {
   .nav-toggle {
     display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
   }
 
   /* Format nav bar into dropdown menu when screen is small */
