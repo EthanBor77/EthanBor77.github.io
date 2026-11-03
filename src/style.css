@@ -52,7 +52,7 @@ body {
 }
 
 .page {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
 }
@@ -83,6 +83,7 @@ body {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.5rem;
+  filter: drop-shadow(1.95px 1.95px 2.6px var(--logo-shadow));
 }
 
 .card h2 {
@@ -222,6 +223,25 @@ body {
 /* When nav button is pushed set nav-links to display */
 .nav-menu.active {
   visibility: visible;
+}
+
+/* About Me Section */
+#about {
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.paragraph-text {
+  font-size: clamp(0.8rem, 1rem, 1rem);
+}
+
+.title-name {
+  font-size: clamp(1.5rem, 2.5rem, 2.5rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  text-shadow: 1.95px 1.95px 2.6px var(--logo-shadow);
 }
 
 @media (max-width: 1450px) {
