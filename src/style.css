@@ -153,7 +153,7 @@ body {
   gap: 16px;
   font-family: "JetBrains Mono", monospace;
   font-weight: 700;
-  font-size: 36px;
+  font-size: clamp(1.5rem, 2.5rem, 2.5rem);
   color: var(--primary);
 }
 
@@ -162,6 +162,11 @@ body {
 } */
 
 .brand-name {
+  text-shadow: 1.95px 1.95px 2.6px var(--logo-shadow);
+}
+
+.short-brand-name {
+  display: none;
   text-shadow: 1.95px 1.95px 2.6px var(--logo-shadow);
 }
 
@@ -219,8 +224,18 @@ body {
   visibility: visible;
 }
 
-@media (max-width: 1410px) {
+@media (max-width: 1450px) {
   .brand-name {
+    display: none;
+  }
+
+  .short-brand-name {
+    display: inline;
+  }
+}
+
+@media (max-width: 1225px) {
+  .short-brand-name {
     display: none;
   }
 }
