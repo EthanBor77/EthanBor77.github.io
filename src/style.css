@@ -186,6 +186,7 @@ body {
   padding: 0.5rem clamp(0.5rem, 1.5rem, 1.5rem);
   border-bottom: 1px solid var(--border);
   background-color: var(--bg);
+  height: 5rem;
   width: 100%;
 }
 
@@ -218,10 +219,23 @@ body {
   display: flex;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1410px) {
+  .brand-name {
+    display: none;
+  }
+}
+
+@media (max-width: 1060px) {
   .nav-toggle {
     display: flex;
     align-items: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 5rem;
+    font-size: clamp(0.5rem, 2rem, 2rem);
+    background: transparent;
+    border: none;
     /* flex-wrap: wrap;
     gap: 0.75rem; */
   }
@@ -231,16 +245,14 @@ body {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
+    top: 5rem;
+    left: 50%;
+    width: 50%;
     background-color: var(--cards);
     padding: 20px;
     box-sizing: border-box;
     gap: 15px;
-  }
-
-  .brand-name {
-    display: none;
+    border-bottom: 1px solid var(--border);
+    border-left: 1px solid var(--border);
   }
 }
