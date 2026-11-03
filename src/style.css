@@ -216,7 +216,7 @@ body {
 /* This only matters when in mobile mode */
 /* When nav button is pushed set nav-links to display */
 .nav-menu.active {
-  display: flex;
+  visibility: visible;
 }
 
 @media (max-width: 1410px) {
@@ -236,14 +236,18 @@ body {
     font-size: clamp(0.5rem, 2rem, 2rem);
     background: transparent;
     border: none;
-    /* flex-wrap: wrap;
-    gap: 0.75rem; */
+    color: var(--text);
+  }
+
+  .nav-toggle:hover {
+    cursor: pointer;
+    color: var(--text-muted);
   }
 
   /* Format nav bar into dropdown menu when screen is small */
   .nav-menu {
-    display: none;
-    flex-direction: column;
+    display: grid;
+    visibility: hidden;
     position: absolute;
     top: 5rem;
     left: 50%;
@@ -254,5 +258,6 @@ body {
     gap: 15px;
     border-bottom: 1px solid var(--border);
     border-left: 1px solid var(--border);
+    text-align: center;
   }
 }
