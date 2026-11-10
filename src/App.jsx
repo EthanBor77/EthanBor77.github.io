@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import TestSetup from "./components/TestSetup";
 import About from "./components/About";
+import Skills from "./components/Skills";
 
 // import heroImg from "./assets/hero.png";
 // import reactLogo from "./assets/react.svg";
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <main>
         <About />
+        <Skills />
         <TestSetup />
       </main>
     </>
