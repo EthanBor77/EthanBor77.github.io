@@ -51,10 +51,15 @@ body {
   line-height: 1.6;
 }
 
+a {
+  text-decoration: none;
+}
+
 .page {
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
+  /* height: 80vh; */
 }
 
 .header {
@@ -94,6 +99,13 @@ body {
   background: var(--primary);
   color: var(--on-color);
   border-color: var(--primary);
+}
+
+.profile-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
 .tag {
@@ -244,6 +256,38 @@ body {
   text-shadow: 1.95px 1.95px 2.6px var(--logo-shadow);
 }
 
+.about-links {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 0.75rem 0 0 1rem;
+}
+
+.social-icon {
+  display: flex;
+  height: 2.5rem;
+  width: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: transparent;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.3s;
+  animation-duration: 0.3s;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  border-color: var(--accent-reverse);
+  background-color: var(--accent);
+  transform: translateY(-2px);
+  filter: drop-shadow(1.95px 1.95px 2.6px var(--logo-shadow));
+}
+
+/* Hide full brand name on smaller screens and show short brand name */
 @media (max-width: 1450px) {
   .brand-name {
     display: none;
@@ -254,12 +298,14 @@ body {
   }
 }
 
+/* Hide short brand name on even smaller screens */
 @media (max-width: 1225px) {
   .short-brand-name {
     display: none;
   }
 }
 
+/* Format nav bar into dropdown menu when screen is small */
 @media (max-width: 1060px) {
   .nav-toggle {
     display: flex;
@@ -294,5 +340,19 @@ body {
     border-bottom: 1px solid var(--border);
     border-left: 1px solid var(--border);
     text-align: center;
+  }
+
+  /* Format about section for smaller screens */
+  @media (max-width: 720px) {
+    #about {
+      flex-direction: column;
+      align-items: center;
+      /* text-align: center; */
+      /* margin: 0 2rem 0 2rem; */
+    }
+
+    img {
+      max-width: 100%;
+    }
   }
 }
