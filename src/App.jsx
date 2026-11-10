@@ -1,7 +1,9 @@
 import Header from "./components/Header";
 import TestSetup from "./components/TestSetup";
+import Intro from "./components/Intro";
 import About from "./components/About";
 import Skills from "./components/Skills";
+import Footer from "./components/Footer";
 
 // import heroImg from "./assets/hero.png";
 // import reactLogo from "./assets/react.svg";
@@ -12,10 +14,12 @@ function App() {
     <>
       <Header />
       <main>
+        <Intro />
         <About />
         <Skills />
         <TestSetup />
       </main>
+      <Footer />
     </>
   );
 

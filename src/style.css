@@ -138,6 +138,7 @@ a {
 
 .btn-primary:hover {
   background: var(--primary-hover);
+  transform: translateY(-2px);
 }
 
 .btn-accent {
@@ -146,7 +147,8 @@ a {
 }
 
 .btn-accent:hover {
-  filter: brightness(1.1);
+  background: var(--accent-reverse);
+  transform: translateY(-2px);
 }
 
 .btn-outline {
@@ -157,6 +159,7 @@ a {
 
 .btn-outline:hover {
   border-color: var(--primary);
+  transform: translateY(-2px);
 }
 
 /* Logo Styling */
@@ -237,8 +240,16 @@ a {
   visibility: visible;
 }
 
-/* About Me Section */
-#about {
+/* Footer styling */
+.site-footer {
+  padding: 1rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  background-color: var(--cards);
+}
+
+/* Intro Section */
+#intro {
   padding-top: 4rem;
   display: flex;
   flex-direction: row;
@@ -256,7 +267,7 @@ a {
   text-shadow: 1.95px 1.95px 2.6px var(--logo-shadow);
 }
 
-.about-links {
+.intro-links {
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -284,6 +295,10 @@ a {
   border-color: var(--accent-reverse);
   background-color: var(--accent);
   transform: translateY(-2px);
+  filter: drop-shadow(1.95px 1.95px 2.6px var(--logo-shadow));
+}
+
+#resume-button {
   filter: drop-shadow(1.95px 1.95px 2.6px var(--logo-shadow));
 }
 
@@ -342,9 +357,9 @@ a {
     text-align: center;
   }
 
-  /* Format about section for smaller screens */
+  /* Format intro section for smaller screens */
   @media (max-width: 720px) {
-    #about {
+    #intro {
       flex-direction: column;
       align-items: center;
       /* text-align: center; */

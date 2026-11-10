@@ -10,7 +10,9 @@ function DownloadResume() {
       target="_blank"
       title="Download Ethan Borror's Resume"
     >
-      <button className="btn btn-accent">Resume</button>
+      <button className="btn btn-accent" id="resume-button">
+        Resume
+      </button>
     </a>
   );
 }
