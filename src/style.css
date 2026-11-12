@@ -131,6 +131,11 @@ a {
   cursor: pointer;
 }
 
+.btn:hover {
+  transform: translateY(-2px);
+  transition: all var(--transition-speed);
+}
+
 .btn-primary {
   background: var(--primary);
   color: var(--on-color);
@@ -138,7 +143,6 @@ a {
 
 .btn-primary:hover {
   background: var(--primary-hover);
-  transform: translateY(-2px);
 }
 
 .btn-accent {
@@ -148,7 +152,6 @@ a {
 
 .btn-accent:hover {
   background: var(--accent-reverse);
-  transform: translateY(-2px);
 }
 
 .btn-outline {
@@ -159,7 +162,10 @@ a {
 
 .btn-outline:hover {
   border-color: var(--primary);
-  transform: translateY(-2px);
+}
+
+.resume-button {
+  filter: drop-shadow(1.95px 1.95px 2.6px var(--logo-shadow));
 }
 
 /* Logo Styling */
@@ -248,6 +254,29 @@ a {
   background-color: var(--cards);
 }
 
+.footer-content {
+  display: flex;
+  color: var(--text-muted);
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 2rem 0 2rem;
+}
+
+.footer-btn {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  filter: none;
+}
+
+.footer-btn:hover {
+  background: var(--accent);
+  color: var(--on-color);
+  border-color: var(--accent-reverse);
+  filter: drop-shadow(1.95px 1.95px 2.6px var(--logo-shadow));
+}
+
 /* Intro Section */
 #intro {
   padding-top: 4rem;
@@ -295,10 +324,6 @@ a {
   border-color: var(--accent-reverse);
   background-color: var(--accent);
   transform: translateY(-2px);
-  filter: drop-shadow(1.95px 1.95px 2.6px var(--logo-shadow));
-}
-
-#resume-button {
   filter: drop-shadow(1.95px 1.95px 2.6px var(--logo-shadow));
 }
 
@@ -368,6 +393,11 @@ a {
 
     img {
       max-width: 100%;
+    }
+
+    .footer-content {
+      flex-direction: column;
+      gap: 0.5rem;
     }
   }
 }
