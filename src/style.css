@@ -62,6 +62,12 @@ a {
   /* height: 80vh; */
 }
 
+.site-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -178,10 +184,6 @@ a {
   font-size: clamp(1.5rem, 2.5rem, 2.5rem);
   color: var(--primary);
 }
-
-/* .brand img {
-  filter: drop-shadow(1.95px 1.95px 2.6px var(--logo-shadow));
-} */
 
 .brand-name {
   text-shadow: 1.95px 1.95px 2.6px var(--logo-shadow);
@@ -325,6 +327,27 @@ a {
   background-color: var(--accent);
   transform: translateY(-2px);
   filter: drop-shadow(1.95px 1.95px 2.6px var(--logo-shadow));
+}
+
+/* About Me Section */
+.about-me-content {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.about-me-box {
+  background-color: var(--cards);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  filter: drop-shadow(1.95px 1.95px 2.6px var(--logo-shadow));
+}
+
+.about-me-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 /* Hide full brand name on smaller screens and show short brand name */

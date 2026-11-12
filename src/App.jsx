@@ -10,10 +10,12 @@ function App() {
     <>
       <Header />
       <main>
-        <Intro />
-        <About />
-        <Skills />
-        <TestSetup />
+        <section className="site-content">
+          <Intro />
+          <About />
+          <Skills />
+          <TestSetup />
+        </section>
       </main>
       <Footer />
     </>
