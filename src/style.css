@@ -59,6 +59,7 @@ a {
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
+  scroll-margin-top: 5rem; /* keep headings visible below the sticky header */
   /* height: 80vh; */
 }
 
@@ -348,6 +349,184 @@ a {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+/* Shared section card styling (Education, Projects, Experience, Contact) */
+.card h3 {
+  margin: 0.25rem 0 0.5rem;
+}
+
+.card ul {
+  padding-left: 1.25rem;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* Projects Section */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.project-link {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+/* Contact Section */
+.contact-list {
+  list-style: none;
+  padding-left: 0 !important;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.contact-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 0.25rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.contact-form input,
+.contact-form textarea {
+  font: inherit;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/* Skills Section */
+.skill-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.skill-filters .btn.selected {
+  background: var(--accent);
+  color: var(--on-color);
+  border-color: var(--accent);
+}
+
+/*
+  Honeycomb grid: pointy-top hexagons that wrap at any width, with every
+  other row shifted half a hexagon so neighbors meet on their diagonal sides.
+  The ::before float uses shape-outside to push alternate rows inward.
+  --s is the hexagon width and --m the gap between hexagons.
+*/
+.honeycomb {
+  --s: 110px;
+  --m: 3px;
+  --f: calc(var(--s) * 1.732 + 4 * var(--m) - 1px);
+  display: flex; /* lets the ::before float take its percentage height */
+}
+
+.honeycomb-inner {
+  list-style: none;
+  font-size: 0; /* removes the gaps between inline-block hexagons */
+}
+
+.honeycomb-inner::before {
+  content: "";
+  width: calc(var(--s) / 2 + var(--m));
+  float: left;
+  height: 120%;
+  shape-outside: repeating-linear-gradient(
+    #0000 0 calc(var(--f) - 3px),
+    #000 0 var(--f)
+  );
+}
+
+.hex {
+  display: inline-block;
+  position: relative;
+  width: var(--s);
+  height: calc(var(--s) * 1.1547);
+  margin: var(--m);
+  margin-bottom: calc(var(--m) - var(--s) * 0.2885);
+  font-size: initial;
+  clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+  background: var(--border); /* shows as a thin outline around .hex-inner */
+  transition:
+    background var(--transition-speed),
+    opacity var(--transition-speed);
+}
+
+.hex-inner {
+  position: absolute;
+  inset: 2px;
+  clip-path: inherit;
+  background: var(--cards);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0 0.6rem;
+  text-align: center;
+}
+
+.hex:hover {
+  background: var(--accent);
+}
+
+.hex.dimmed {
+  opacity: 0.25;
+}
+
+.hex-icon {
+  width: 40%;
+  height: auto;
+}
+
+[data-theme="dark"] .hex-icon.mono {
+  filter: invert(1);
+}
+
+.hex-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+@media (max-width: 720px) {
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+
+  .honeycomb {
+    --s: 84px;
+  }
+
+  .hex-label {
+    font-size: 0.65rem;
+  }
 }
 
 /* Hide full brand name on smaller screens and show short brand name */

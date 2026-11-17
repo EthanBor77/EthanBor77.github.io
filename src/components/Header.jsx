@@ -43,19 +43,20 @@ function Header() {
         <a href="#about" class="nav-link">
           &#9667; About &#9657;
         </a>
-        <a href="#Skills" class="nav-link">
+        <a href="#skills" class="nav-link">
           &#9667; Skills &#9657;
         </a>
-        <a href="#Education" class="nav-link">
+        <a href="#education" class="nav-link">
           &#9667; Education &#9657;
         </a>
-        <a href="#Projects" class="nav-link">
+        <a href="#projects" class="nav-link">
           &#9667; Projects &#9657;
         </a>
-        <a href="#Experience" class="nav-link">
+        {/* Hidden until the Experience section is shown
+        <a href="#experience" class="nav-link">
           &#9667; Experience &#9657;
-        </a>
-        <a href="#Contact" class="nav-link">
+        </a> */}
+        <a href="#contact" class="nav-link">
           &#9667; Contact &#9657;
         </a>
         <button
