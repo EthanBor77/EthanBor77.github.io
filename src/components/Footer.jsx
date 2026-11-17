@@ -1,5 +1,3 @@
-import resume from "../../public/Ethan_Borror_Resume.pdf";
-
 function Footer() {
   return (
     <footer className="site-footer">
@@ -84,7 +82,7 @@ function Footer() {
           <a
             alt="Download Ethan Borror's Resume"
             download="Ethan_Borror_Resume.pdf"
-            href={resume}
+            href="/Ethan_Borror_Resume.pdf"
             rel="noopener noreferrer"
             target="_blank"
             title="Download Ethan Borror's Resume"

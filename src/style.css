@@ -331,20 +331,35 @@ a {
 }
 
 /* About Me Section */
-.about-me-content {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
+/* Wider story column; stacked by the 720px rule at the end of the file */
+.two-column.about-layout {
+  grid-template-columns: 2fr 1fr;
+  align-items: start;
 }
 
-.about-me-box {
-  background-color: var(--cards);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.5rem;
-  filter: drop-shadow(1.95px 1.95px 2.6px var(--logo-shadow));
+.about-story p + p {
+  margin-top: 1rem;
 }
 
+.fact-list {
+  margin: 0.5rem 0 1.25rem;
+}
+
+.fact-list div {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.fact-list dt {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.fact-list dd {
+  font-weight: 600;
+}
+
+/* Used by Experience.jsx */
 .about-me-right {
   display: flex;
   flex-direction: column;
@@ -516,7 +531,8 @@ a {
 }
 
 @media (max-width: 720px) {
-  .two-column {
+  .two-column,
+  .two-column.about-layout {
     grid-template-columns: 1fr;
   }
 
