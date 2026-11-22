@@ -1,11 +1,10 @@
 import Header from "./components/Header";
-import TestSetup from "./components/TestSetup";
-import Intro from "./components/Intro";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Education from "./components/Education";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+import Intro from "./sections/Intro";
+import About from "./sections/About";
+import Skills from "./sections/Skills";
+import Education from "./sections/Education";
+import Projects from "./sections/Projects";
+import Contact from "./sections/Contact";
 import Footer from "./components/Footer";
 
 function App() {
@@ -21,7 +20,6 @@ function App() {
           <Projects />
           {/* <Experience /> hidden for now; see Experience.jsx */}
           <Contact />
-          {/* <TestSetup /> */}
         </section>
       </main>
       <Footer />

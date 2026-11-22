@@ -21,15 +21,17 @@ There is no test framework.
 
 ## Architecture
 
-- `index.html` → `src/main.jsx` (imports `src/style.css`, renders `<App/>` in StrictMode) → `src/App.jsx`, which stacks the page sections: `Header`, then `Intro`/`About`/`Skills`/`TestSetup` inside `<main><section className="site-content">`, then `Footer`.
-- Each section component returns `<section className="page" id="...">`. The header nav uses in-page `#anchor` links to those ids. Ids are lowercase (`intro`, `about`, `skills`), and fragment matching is case-sensitive, so a new section's id must exactly match its nav link. Several nav links (`#Skills`, `#Education`, `#Projects`, `#Experience`, `#Contact`) don't match any section yet.
-- **Theming:** colors are CSS custom properties on `:root` (light), overridden under `[data-theme="dark"]` in `style.css`. `Header.jsx` sets `document.documentElement.dataset.theme` and saves it to `localStorage("theme")`. `TestSetup.jsx` (a temporary "Color Test" section) has its own copy of the same logic. Keep a single source of theme state when changing this.
+- `index.html` → `src/main.jsx` (imports `src/style.css`, renders `<App/>` in StrictMode) → `src/App.jsx`, which stacks the page sections: `Header`, then `Intro`/`About`/`Skills`/`Education`/`Projects`/`Contact` inside `<main><section className="site-content">`, then `Footer`. `Experience.jsx` exists but is intentionally not rendered yet (commented out in `App.jsx` and in the `Header.jsx` nav).
+- **Folders:** `src/sections/` holds one file per page section (Intro, About, Skills, Education, Projects, Experience, Contact). `src/components/` holds reusable pieces used across sections (Header, Footer, Logo, SocialLinks, DownloadResume). `src/assets/` holds imported images. A new section goes in `sections/` and is added to `App.jsx` and the `Header.jsx` nav.
+- Each section returns `<section className="page" id="...">`. The header nav uses in-page `#anchor` links to those ids. Ids are lowercase, and fragment matching is case-sensitive, so a new section's id must exactly match its nav link.
+- Section content (projects, skills, facts, contact links) is kept in data arrays at the top of each component file and mapped into markup; add entries there rather than duplicating JSX. `SocialLinks.jsx` is shared by `Intro` and `Footer`.
+- **Theming:** colors are CSS custom properties on `:root` (light), overridden under `[data-theme="dark"]` in `style.css`. `Header.jsx` owns the theme state: it defaults to the system theme (`prefers-color-scheme`), follows system changes, and only saves to `localStorage("theme")` when the visitor clicks the toggle. An inline script in `index.html` applies the same rule before first paint to avoid a light-mode flash; keep the two in sync.
 - Responsive breakpoints are `max-width` media queries at the bottom of `style.css` (1450 / 1225 / 1060px). The mobile nav is toggled by the `active` class on `.nav-menu`.
-- **Assets:** images that components import live in `src/assets/`. Favicons, `site.webmanifest`, and the resume PDF live in `public/` and are served from the site root. The resume is currently imported as `../../public/Ethan_Borror_Resume.pdf` in `DownloadResume.jsx` and `Footer.jsx`; the usual Vite approach is to link files in `public/` by root path (`/Ethan_Borror_Resume.pdf`).
+- **Assets:** images that components import live in `src/assets/`. Favicons, `site.webmanifest`, and the resume PDF live in `public/` and are served from the site root. Link `public/` files by root path (e.g. `href="/Ethan_Borror_Resume.pdf"`); Vite errors if you `import` from `public/`.
 - `OldFiles/` contains old drafts. It is gitignored and not part of the build.
 
 ## Conventions
 
 - Function components, one per file, each ending in `export default`.
-- Use `className`, not `class`. `Header.jsx` still has some `class=` attributes, which React warns about.
+- Use JSX attribute names: `className` (not `class`) and camelCase SVG attributes (`strokeWidth`, not `stroke-width`).
 - External links use `target="_blank" rel="noopener noreferrer"`.
