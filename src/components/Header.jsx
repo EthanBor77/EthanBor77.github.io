@@ -19,7 +19,7 @@ function Header() {
   }, [theme]);
 
   return (
-    <header class="site-header">
+    <header className="site-header">
       {/* Website Logo */}
       <a href="https://ethanbor77.github.io/" className="brand-link">
         <Logo />
@@ -27,7 +27,7 @@ function Header() {
 
       {/* Nav dropdown for mobile screens only */}
       <button
-        class="nav-toggle"
+        className="nav-toggle"
         aria-label="Toggle navigation"
         // className="menu-toggle"
         onClick={toggleMenu}
@@ -40,23 +40,23 @@ function Header() {
         className={`nav-menu ${isActive ? "active" : ""}`}
         aria-label="Primary Navigation"
       >
-        <a href="#about" class="nav-link">
+        <a href="#about" className="nav-link">
           &#9667; About &#9657;
         </a>
-        <a href="#skills" class="nav-link">
+        <a href="#skills" className="nav-link">
           &#9667; Skills &#9657;
         </a>
-        <a href="#education" class="nav-link">
+        <a href="#education" className="nav-link">
           &#9667; Education &#9657;
         </a>
-        <a href="#projects" class="nav-link">
+        <a href="#projects" className="nav-link">
           &#9667; Projects &#9657;
         </a>
         {/* Hidden until the Experience section is shown
-        <a href="#experience" class="nav-link">
+        <a href="#experience" className="nav-link">
           &#9667; Experience &#9657;
         </a> */}
-        <a href="#contact" class="nav-link">
+        <a href="#contact" className="nav-link">
           &#9667; Contact &#9657;
         </a>
         <button
