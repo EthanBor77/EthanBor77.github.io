@@ -1,6 +1,5 @@
-import DownloadResume from "./DownloadResume";
+import DownloadResume from "../components/DownloadResume";
 
-// Anything in [brackets] is a placeholder to replace with your own words.
 const facts = [
   { label: "School", value: "Oakland University, B.S. Computer Science" },
   { label: "Graduating", value: "May 2027" },

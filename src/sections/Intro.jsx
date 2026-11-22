@@ -1,6 +1,6 @@
 import profileImage from "../assets/BadDrawing.png";
-import DownloadResume from "./DownloadResume";
-import SocialLinks from "./SocialLinks";
+import DownloadResume from "../components/DownloadResume";
+import SocialLinks from "../components/SocialLinks";
 
 function Intro() {
   return (
