@@ -1,11 +1,9 @@
-import resume from "../../public/Ethan_Borror_Resume.pdf";
-
 function DownloadResume() {
   return (
     <a
       alt="Download Ethan Borror's Resume"
       download="Ethan_Borror_Resume.pdf"
-      href={resume}
+      href="/Ethan_Borror_Resume.pdf"
       rel="noopener noreferrer"
       target="_blank"
       title="Download Ethan Borror's Resume"

@@ -21,7 +21,7 @@ function App() {
           <Projects />
           {/* <Experience /> hidden for now; see Experience.jsx */}
           <Contact />
-          <TestSetup />
+          {/* <TestSetup /> */}
         </section>
       </main>
       <Footer />

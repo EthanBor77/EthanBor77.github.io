@@ -1,44 +1,55 @@
+import DownloadResume from "./DownloadResume";
+
+// Anything in [brackets] is a placeholder to replace with your own words.
+const facts = [
+  { label: "School", value: "Oakland University, B.S. Computer Science" },
+  { label: "Graduating", value: "May 2027" },
+  { label: "Based in", value: "Clarkston, MI" },
+  { label: "Currently learning", value: "React & Claude Code" },
+  { label: "Open to", value: "Internships & full-time roles" },
+];
+
 function About() {
   return (
     <section className="page" id="about">
       <h2 className="title-name">About Me</h2>
-      <div className="about-me-content">
-        <section className="about-me-box">
-          Computer Science major at Oakland University offering hands-on
-          experience in Java, HTML/CSS, and software development fundamentals.
-          Brings strong problem-solving skills, technical certifications, and a
-          proven ability to communicate complex ideas through teaching and
-          leadership experience. Eager to contribute to a collaborative
-          development team while building scalable, user-focused software
-          solutions.
+      <div className="two-column about-layout">
+        <section className="card about-story">
+          <p>
+            I'm a Computer Science student at Oakland University, graduating in
+            May 2027. I like building practical products, from web apps to tools
+            for the card games I play.
+          </p>
+          <p>
+            {/* First sentence is weak. Tell an exect moment or story */}
+            {/* I fell in love with coding when... */}I began coding due to my
+            interest in how programs run and my desire to be able to create
+            tangible products. For 5+ years I've coached at Pro Martial Arts
+            Lake Orion, working with students of all ages, which taught me how
+            to explain complex ideas clearly.
+          </p>
+          <p>
+            Right now I'm looking for software engineering internships, and
+            full-time roles once I graduate. If you think I'd be a good fit,{" "}
+            <a className="project-link" href="#contact">
+              get in touch
+            </a>
+            .
+          </p>
         </section>
 
-        <div className="about-me-right">
-          <section className="about-me-box">
-            <h3>Skills</h3>
-            <ul>
-              <li>Java</li>
-              <li>HTML/CSS</li>
-              <li>Software Development</li>
-            </ul>
-          </section>
-          <section className="about-me-box">
-            <h3>Projects</h3>
-            <ul>
-              <li>Project 1</li>
-              <li>Project 2</li>
-              <li>Project 3</li>
-            </ul>
-          </section>
-          <section className="about-me-box">
-            <h3>Areas of Expertise</h3>
-            <ul>
-              <li>Problem Solving</li>
-              <li>Technical Certifications</li>
-              <li>Communication</li>
-            </ul>
-          </section>
-        </div>
+        <section className="card">
+          <h3>Quick Facts</h3>
+          <dl className="fact-list">
+            {facts.map((fact) => (
+              <div key={fact.label}>
+                <dt>{fact.label}</dt>
+                <dd>{fact.value}</dd>
+              </div>
+            ))}
+          </dl>
+          <DownloadResume />
+        </section>
       </div>
     </section>
   );

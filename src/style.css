@@ -223,20 +223,28 @@ a {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: clamp(0.5rem, 1.5rem, 1.5rem);
+  /* Smaller gap because each link now has its own padding;
+     the visible space between labels is still 1.5rem */
+  gap: 0.5rem;
   white-space: nowrap;
 }
 
 .nav-link {
+  display: inline-block;
+  padding: 1rem 0.5rem; /* makes the clickable area bigger than the text */
+  border-radius: 8px;
   color: var(--text-muted);
   text-decoration: none;
   font-size: clamp(0.5rem, 1rem, 1rem);
   font-weight: 600;
-  transition: color var(--transition-speed);
+  transition:
+    color var(--transition-speed),
+    background-color var(--transition-speed);
 }
 
 .nav-link:hover {
   color: var(--text);
+  background-color: var(--cards);
 }
 
 .nav-toggle {
@@ -330,21 +338,46 @@ a {
   filter: drop-shadow(1.95px 1.95px 2.6px var(--logo-shadow));
 }
 
+/* Icon line color: muted normally, light against the accent on hover */
+.social-icon svg {
+  stroke: var(--text-muted);
+  transition: stroke 0.3s;
+}
+
+.social-icon:hover svg {
+  stroke: var(--border);
+}
+
 /* About Me Section */
-.about-me-content {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
+/* Wider story column; stacked by the 720px rule at the end of the file */
+.two-column.about-layout {
+  grid-template-columns: 2fr 1fr;
+  align-items: start;
 }
 
-.about-me-box {
-  background-color: var(--cards);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.5rem;
-  filter: drop-shadow(1.95px 1.95px 2.6px var(--logo-shadow));
+.about-story p + p {
+  margin-top: 1rem;
 }
 
+.fact-list {
+  margin: 0.5rem 0 1.25rem;
+}
+
+.fact-list div {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.fact-list dt {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.fact-list dd {
+  font-weight: 600;
+}
+
+/* Used by Experience.jsx */
 .about-me-right {
   display: flex;
   flex-direction: column;
@@ -516,7 +549,8 @@ a {
 }
 
 @media (max-width: 720px) {
-  .two-column {
+  .two-column,
+  .two-column.about-layout {
     grid-template-columns: 1fr;
   }
 
@@ -578,10 +612,20 @@ a {
     background-color: var(--cards);
     padding: 20px;
     box-sizing: border-box;
-    gap: 15px;
+    gap: 0; /* links have their own padding and fill the full row width */
     border-bottom: 1px solid var(--border);
     border-left: 1px solid var(--border);
     text-align: center;
+  }
+
+  /* Shorter rows in the dropdown so the menu doesn't get too tall */
+  .nav-link {
+    padding: 0.5rem;
+  }
+
+  /* The dropdown is already --cards colored, so highlight with --bg */
+  .nav-link:hover {
+    background-color: var(--bg);
   }
 
   /* Format intro section for smaller screens */
